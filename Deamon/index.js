@@ -12,14 +12,30 @@ function log(...args) {
   console.log(`[${time}]`, ...args);
 }
 
-async function updateEc2Ip() {
+async function getPublicIp() {
+  try {
+    log('Fetching public IP from ipify');
+    const response = await axios.get('https://api.ipify.org?format=json');
+    if (response.data.ip) {
+      log(`Public IP fetched: ${response.data.ip}`);
+      return response.data.ip;
+    }
+    log('No IP returned from ipify');
+    return null;
+  } catch (error) {
+    log(`Error fetching public IP: ${error.message}`);
+    return null;
+  }
+}
+
+async function updateEc2Ip(newIp) {
   try {
     if (!EC2_API_URL || !API_KEY) {
       log('Missing configuration: EC2_API_URL or API_KEY not set');
       return;
     }
 
-    log('Attempting to update IP with EC2 proxy');
+    log(`Sending IP update to EC2 proxy: ${newIp}`);
     const response = await axios.get(EC2_API_URL, {
       headers: { 'X-API-Key': API_KEY }
     });
@@ -35,12 +51,27 @@ async function updateEc2Ip() {
   }
 }
 
+async function checkIpChange() {
+  const newIp = await getPublicIp();
+  if (!newIp) {
+    log('Skipping IP update due to failed IP fetch');
+    return;
+  }
+
+  if (newIp !== currentIp) {
+    log(`IP change detected: ${currentIp} -> ${newIp}`);
+    await updateEc2Ip(newIp);
+  } else {
+    log('No IP change detected');
+  }
+}
+
 // Run every minute
 cron.schedule('* * * * *', () => {
   log('Scheduled IP update check');
-  updateEc2Ip();
+  checkIpChange();
 });
 
-// Initial IP update
+// Initial IP check
 log('Starting DDNS Daemon');
-updateEc2Ip();
+checkIpChange();
