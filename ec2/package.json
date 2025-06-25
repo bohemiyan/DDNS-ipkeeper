@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "pm2": "pm2 start index.js --name ipkeeper-ec2",
-    "pm2:stop": "pm2 stop ipkeeper-ec2",
-    "pm2:restart": "pm2 restart ipkeeper-ec2",
+    "pm2": "sudo pm2 start index.js --name ipkeeper-ec2",
+    "pm2:stop": "sudo pm2 stop ipkeeper-ec2",
+    "pm2:restart": "sudo pm2 restart ipkeeper-ec2",
     "pm2:logs": "pm2 logs ipkeeper-ec2",
-    "pm2:delete": "pm2 delete ipkeeper-ec2"
+    "pm2:delete": "sudo pm2 delete ipkeeper-ec2"
   },
   "keywords": [
     "dynamic-ip",
