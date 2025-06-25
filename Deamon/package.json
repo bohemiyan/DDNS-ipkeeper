@@ -1,0 +1,49 @@
+{
+  "name": "ipkeeper-daemon",
+  "version": "1.0.0",
+  "description": "IPKeeper Home Server Daemon - Automatically detects and updates your dynamic IP address to EC2 proxy server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "pm2:start": "pm2 start index.js --name ipkeeper-daemon",
+    "pm2:stop": "pm2 stop ipkeeper-daemon",
+    "pm2:restart": "pm2 restart ipkeeper-daemon",
+    "pm2:logs": "pm2 logs ipkeeper-daemon",
+    "pm2:delete": "pm2 delete ipkeeper-daemon"
+  },
+  "keywords": [
+    "dynamic-ip",
+    "ip-updater",
+    "daemon",
+    "home-server",
+    "ddns",
+    "automatic",
+    "cron",
+    "ip-detection"
+  ],
+  "author": "IPKeeper Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bohemiyan/ipkeeper.git",
+    "directory": "daemon"
+  },
+  "homepage": "https://github.com/bohemiyan/ipkeeper#readme",
+  "bugs": {
+    "url": "https://github.com/bohemiyan/ipkeeper/issues"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "dotenv": "^16.5.0",
+    "node-cron": "^4.1.1",
+    "pm2": "^6.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
