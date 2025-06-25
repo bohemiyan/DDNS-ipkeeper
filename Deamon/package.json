@@ -1,16 +1,16 @@
 {
-  "name": "ipkeeper-daemon",
+  "name": "DDNS-ipkeeper-daemon",
   "version": "1.0.0",
-  "description": "IPKeeper Home Server Daemon - Automatically detects and updates your dynamic IP address to EC2 proxy server",
+  "description": "DDNS-ipkeeper Home Server Daemon - Automatically detects and updates your dynamic IP address to EC2 proxy server",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "pm2:start": "pm2 start index.js --name ipkeeper-daemon",
-    "pm2:stop": "pm2 stop ipkeeper-daemon",
-    "pm2:restart": "pm2 restart ipkeeper-daemon",
-    "pm2:logs": "pm2 logs ipkeeper-daemon",
-    "pm2:delete": "pm2 delete ipkeeper-daemon"
+    "pm2:start": "pm2 start index.js --name DDNS-ipkeeper-daemon",
+    "pm2:stop": "pm2 stop DDNS-ipkeeper-daemon",
+    "pm2:restart": "pm2 restart DDNS-ipkeeper-daemon",
+    "pm2:logs": "pm2 logs DDNS-ipkeeper-daemon",
+    "pm2:delete": "pm2 delete DDNS-ipkeeper-daemon"
   },
   "keywords": [
     "dynamic-ip",
@@ -22,16 +22,16 @@
     "cron",
     "ip-detection"
   ],
-  "author": "IPKeeper Contributors",
+  "author": "DDNS-ipkeeper Contributors",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bohemiyan/ipkeeper.git",
+    "url": "https://github.com/bohemiyan/DDNS-ipkeeper.git",
     "directory": "daemon"
   },
-  "homepage": "https://github.com/bohemiyan/ipkeeper#readme",
+  "homepage": "https://github.com/bohemiyan/DDNS-ipkeeper#readme",
   "bugs": {
-    "url": "https://github.com/bohemiyan/ipkeeper/issues"
+    "url": "https://github.com/bohemiyan/DDNS-ipkeeper/issues"
   },
   "engines": {
     "node": ">=16.0.0",

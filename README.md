@@ -1,4 +1,4 @@
-# 🌐 IPKeeper
+# 🌐 DDNS-ipkeeper
 
 > **Dynamic IP, Static Dreams** - Because your wallet shouldn't cry every time your IP changes! 💸
 
@@ -12,9 +12,9 @@ Transform your AWS free-tier EC2 instance into a magical reverse proxy that keep
 
 ---
 
-## ✨ What is IPKeeper?
+## ✨ What is DDNS-ipkeeper?
 
-IPKeeper is a lightweight Node.js application that bridges the gap between your dynamic home server and the internet. It runs on AWS EC2's free tier and automatically updates your server's changing IP address, ensuring uninterrupted access to your services.
+DDNS-ipkeeper is a lightweight Node.js application that bridges the gap between your dynamic home server and the internet. It runs on AWS EC2's free tier and automatically updates your server's changing IP address, ensuring uninterrupted access to your services.
 
 ### 🎯 Perfect For
 - Home lab wizards on ramen budgets 🍜
@@ -98,8 +98,8 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Clone the magic kingdom
-git clone https://github.com/bohemiyan/ipkeeper.git
-cd ipkeeper/ec2
+git clone https://github.com/bohemiyan/DDNS-ipkeeper.git
+cd DDNS-ipkeeper/ec2
 
 # Install all dependencies (they're already in package.json!)
 npm install
@@ -156,8 +156,8 @@ Set up the daemon on your home server:
 
 ```bash
 # Clone the repo on your home server too
-git clone https://github.com/yourusername/ipkeeper.git
-cd ipkeeper/daemon
+git clone https://github.com/yourusername/DDNS-ipkeeper.git
+cd DDNS-ipkeeper/daemon
 
 # Install dependencies
 npm install
@@ -365,11 +365,11 @@ touch .env
 **Restart Everything:**
 ```bash
 # On EC2 server
-cd ipkeeper/ec2
+cd DDNS-ipkeeper/ec2
 npm run pm2:restart
 
 # On home server
-cd ipkeeper/daemon
+cd DDNS-ipkeeper/daemon
 npm run pm2:restart
 ```
 
@@ -389,7 +389,7 @@ npm run pm2  # or npm run pm2:start for daemon
 
 ## 📊 Monitoring Dashboard
 
-Track your IPKeeper performance:
+Track your DDNS-ipkeeper performance:
 
 - **Uptime**: Monitor service availability with `pm2 monit`
 - **Request Count**: Track HTTP/HTTPS traffic in logs
@@ -418,13 +418,13 @@ pm2 list
 - [ ] Security group configured (ports 80, 443, 3080, 22)
 - [ ] Connected to EC2 via SSH
 - [ ] Node.js installed
-- [ ] IPKeeper code downloaded
+- [ ] DDNS-ipkeeper code downloaded
 - [ ] Dependencies installed (`npm install`)
 - [ ] `.env` file configured with your settings
 - [ ] Service started (`npm run pm2`)
 
 ### ✅ Home Server Setup Checklist
-- [ ] IPKeeper daemon code downloaded
+- [ ] DDNS-ipkeeper daemon code downloaded
 - [ ] Dependencies installed (`npm install`)
 - [ ] `.env` file configured with EC2 URL and API key
 - [ ] Daemon started (`npm run pm2:start`)
@@ -450,8 +450,8 @@ We welcome contributions! Here's how you can help:
 
 ### Development Setup
 ```bash
-git clone https://github.com/yourusername/ipkeeper.git
-cd ipkeeper
+git clone https://github.com/yourusername/DDNS-ipkeeper.git
+cd DDNS-ipkeeper
 npm install
 npm run dev
 ```
@@ -464,9 +464,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## ⭐ Support IPKeeper
+## ⭐ Support DDNS-ipkeeper
 
-If IPKeeper helped you save money and hassle, consider:
+If DDNS-ipkeeper helped you save money and hassle, consider:
 
 - ⭐ **Starring** this repository
 - 🐛 **Reporting** bugs and issues
@@ -484,10 +484,10 @@ If IPKeeper helped you save money and hassle, consider:
 
 ## 🎈 Final Words
 
-IPKeeper isn't just code – it's freedom from the tyranny of static IP pricing! Whether you're running a blog, a game server, a home lab, or that weird IoT project that monitors your houseplants, IPKeeper has your back.
+DDNS-ipkeeper isn't just code – it's freedom from the tyranny of static IP pricing! Whether you're running a blog, a game server, a home lab, or that weird IoT project that monitors your houseplants, DDNS-ipkeeper has your back.
 
 **The best part?** Once it's set up, you can literally forget about it. Your IP can change 100 times, and your friends will still be able to access your services without you lifting a finger. It's like having a personal assistant for your network, except it doesn't judge your 3 AM coding sessions.
 
-**And for non-coders?** We've made it as simple as editing two text files. No programming knowledge required – just copy, paste, and run the commands. If you can follow a recipe, you can set up IPKeeper!
+**And for non-coders?** We've made it as simple as editing two text files. No programming knowledge required – just copy, paste, and run the commands. If you can follow a recipe, you can set up DDNS-ipkeeper!
 
 Now go forth and proxy like the budget-conscious genius you are! 🎊

@@ -1,16 +1,16 @@
 {
-  "name": "ipkeeper-ec2",
+  "name": "DDNS-ipkeeper-ec2",
   "version": "1.0.0",
-  "description": "IPKeeper EC2 Reverse Proxy Server - Dynamic IP management for home servers using AWS free tier",
+  "description": "DDNS-ipkeeper EC2 Reverse Proxy Server - Dynamic IP management for home servers using AWS free tier",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "pm2": "sudo pm2 start index.js --name ipkeeper-ec2",
-    "pm2:stop": "sudo pm2 stop ipkeeper-ec2",
-    "pm2:restart": "sudo pm2 restart ipkeeper-ec2",
-    "pm2:logs": "pm2 logs ipkeeper-ec2",
-    "pm2:delete": "sudo pm2 delete ipkeeper-ec2"
+    "pm2": "sudo pm2 start index.js --name DDNS-ipkeeper-ec2",
+    "pm2:stop": "sudo pm2 stop DDNS-ipkeeper-ec2",
+    "pm2:restart": "sudo pm2 restart DDNS-ipkeeper-ec2",
+    "pm2:logs": "pm2 logs DDNS-ipkeeper-ec2",
+    "pm2:delete": "sudo pm2 delete DDNS-ipkeeper-ec2"
   },
   "keywords": [
     "dynamic-ip",
@@ -21,15 +21,15 @@
     "free-tier",
     "proxy"
   ],
-  "author": "IPKeeper Contributors",
+  "author": "DDNS-ipkeeper Contributors",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bohemiyan/ipkeeper.git"
+    "url": "https://github.com/bohemiyan/DDNS-ipkeeper.git"
   },
-  "homepage": "https://github.com/bohemiyan/ipkeeper#readme",
+  "homepage": "https://github.com/bohemiyan/DDNS-ipkeeper#readme",
   "bugs": {
-    "url": "https://github.com/bohemiyan/ipkeeper/issues"
+    "url": "https://github.com/bohemiyan/DDNS-ipkeeper/issues"
   },
   "engines": {
     "node": ">=16.0.0",
